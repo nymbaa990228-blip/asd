@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatApp - Realtime</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+    <div id="overlay">
+        <div class="join-card">
+            <h2>Welcome to Chat</h2>
+            <p>Please enter your name to join</p>
+            <input type="text" id="usernameInput" placeholder="Your name..." autocomplete="off">
+            <button id="joinBtn">Join Chat</button>
+        </div>
+    </div>
+
+    <div id="app">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div id="statusDot"></div>
+                <span id="connectionStatus">Connecting...</span>
+            </div>
+            <h3>Online Users</h3>
+            <ul id="userList"></ul>
+        </aside>
+
+        <main class="chat-area">
+            <div id="messages"></div>
+            
+            <div id="typingBar"></div>
+            
+            <div class="input-area">
+                <input type="text" id="msgInput" placeholder="Type a message..." autocomplete="off">
+                <button id="sendBtn">
+                    <svg viewBox="0 0 24 24" width="24" height="24">
+                        <path fill="currentColor" d="M2,21L23,12L2,3V10L17,12L2,14V21Z" />
+                    </svg>
+                </button>
+            </div>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
